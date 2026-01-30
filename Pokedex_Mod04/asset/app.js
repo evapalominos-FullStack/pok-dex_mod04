@@ -4,7 +4,7 @@ let pokemonData = [];
         try {
             const promises = [];
             for (let i = 1; i <= 9; i++) {
-                promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/1`).then(res => res.json()));
+                promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${1}`).then(res => res.json()));
             }
             
             // Esperamos a que todas las peticiones terminen
@@ -49,4 +49,5 @@ let pokemonData = [];
     });
 
     // Inicializar
+
     fetchPokemons();
