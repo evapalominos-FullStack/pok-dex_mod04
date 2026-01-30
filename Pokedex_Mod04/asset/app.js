@@ -7,7 +7,7 @@ let pokemonData = [];
                 promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${i}`).then(res => res.json()));
             }
             
-            // Esperamos a que todas las peticiones terminen
+            
             pokemonData = await Promise.all(promises);
             renderCards(pokemonData);
         } catch (error) {
@@ -41,7 +41,7 @@ let pokemonData = [];
     };
     
 
-    // Filtro de búsqueda opcional
+   
     document.getElementById('searchInput').addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
         const filtered = pokemonData.filter(p => p.name.includes(term));
@@ -51,4 +51,5 @@ let pokemonData = [];
     // Inicializar
 
     fetchPokemons();
+
 
